@@ -5,6 +5,8 @@ local gruber_hl = require("judo.highlights.colorscheme").highlights
 
 ---@type HighlightsProvider
 local M = {
+	setup = function()
+	end,
 	highlights = {},
 }
 
@@ -193,7 +195,7 @@ M.highlights.label = Highlight.new("Label", { link = gruber_hl.orange })
 ---"sizeof", "+", "*", etc.
 M.highlights.operator = Highlight.new("Operator", { fg = c.fg, italic = opts.italic.operators })
 ---Any other keyword
-M.highlights.keyword = Highlight.new("Keyword", { link = gruber_hl.blue })
+M.highlights.keyword = Highlight.new("Keyword", { link = c.blue })
 ---Try, catch, throw
 M.highlights.exception = Highlight.new("Exception", { link = gruber_hl.yellow_bold })
 ---(preferred) generic Preprocessor
@@ -207,7 +209,7 @@ M.highlights.macro = Highlight.new("Macro", { link = gruber_hl.quartz })
 ---Preprocessor #if, #else, #endif, etc.
 M.highlights.pre_condit = Highlight.new("PreCondit", { link = gruber_hl.quartz })
 ---(preferred) int, long, char, etc.
-M.highlights.type = Highlight.new("Type", { link = gruber_hl.light_blue })
+M.highlights.type = Highlight.new("Type", { link = c.light_blue })
 ---Static, register, volatile, etc.
 M.highlights.storage_class = Highlight.new("StorageClass", { link = gruber_hl.light_blue })
 ---Struct, union, enum, etc.
@@ -223,7 +225,7 @@ M.highlights.tag = Highlight.new("Tag", { link = gruber_hl.wisteria })
 ---Character that needs attention
 M.highlights.delimiter = Highlight.new("Delimiter", { link = gruber_hl.fg0 })
 ---Special things inside a comment
-M.highlights.special_comment = Highlight.new("SpecialComment", { link = gruber_hl.wisteria_bold })
+M.highlights.special_comment = Highlight.new("SpecialComment", { link = gruber_hl.teal })
 ---Debugging statements
 M.highlights.debug = Highlight.new("Debug", { link = gruber_hl.fg2 })
 

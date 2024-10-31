@@ -1,13 +1,41 @@
--- local function R()
---	for k in pairs(package.loaded) do
---		if k:match(".*gruber-darker.*") then
---			package.loaded[k] = nil
---		end
---	end
---   package.loaded["gruber-darker"] = nil
---   require("gruber-darker").setup()
--- end
+---@class Color
+---@field private value integer|nil
+local Color = {}
+Color.__index = Color
 
--- vim.api.nvim_create_user_command("GruberDarkerTest", R, {})
+---Create a new color
+---@param value integer
+---@return Color
+function Color.new(value)
+	local color = setmetatable({
+		value = value,
+	}, Color)
+	return color
+end
 
-require("judo").load()
+---Create the "NONE" color
+---@return Color
+function Color.none()
+	local color = setmetatable({
+		value = nil,
+	}, Color)
+	return color
+end
+
+---Get hexadecimal color value as a string
+---@return string
+function Color:to_string()
+	if self.value == nil then
+		return "NONE"
+	end
+
+	-- special edge case for BLACK where
+	-- "#0" is returned, which is invalid to Neovim
+	if self.value == 0 then
+		return "#000000"
+	end
+
+	return string.format("#%x", self.value)
+end
+
+return Color

@@ -4,6 +4,8 @@ local judo_hl = require("judo.highlights.colorscheme").highlights
 
 ---@type HighlightsProvider
 local M = {
+	setup = function()
+	end,
 	highlights = {},
 }
 

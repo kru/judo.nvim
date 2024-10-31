@@ -4,9 +4,9 @@ local opts = require("judo.config").get_opts()
 
 ---@type HighlightsProvider
 local M = {
-	highlights = {},
 	setup = function()
 	end,
+	highlights = {},
 }
 
 ---Set judo-specific highlights
@@ -21,7 +21,7 @@ end
 
 -- Colors
 
-M.highlights.fg0 = Highlight.new("JudoFg0", { fg = c.fg })
+M.highlights.fg0 = Highlight.new("JudoFg0", { fg = c.fg, bg = c.bg })
 M.highlights.fg1 = Highlight.new("JudoFg1", { fg = c["fg+1"] })
 M.highlights.fg2 = Highlight.new("JudoFg2", { fg = c["fg+2"] })
 
@@ -52,8 +52,7 @@ M.highlights.quartz = Highlight.new("JudoQuartz", { fg = c.quartz })
 M.highlights.quartz_bold = Highlight.new("JudoQuartzBold", { fg = c.quartz, bold = opts.bold })
 
 M.highlights.darker_niagara = Highlight.new("JudoDarkestNiagara", { fg = c["niagara-2"] })
-M.highlights.darker_niagara_bold =
-	Highlight.new("JudoDarkestNiagaraBold", { fg = c["niagara-2"], bold = opts.bold })
+M.highlights.darker_niagara_bold = Highlight.new("JudoDarkestNiagaraBold", { fg = c["niagara-2"], bold = opts.bold })
 M.highlights.dark_niagara = Highlight.new("JudoDarkNiagara", { fg = c["niagara-1"] })
 M.highlights.dark_niagara_bold = Highlight.new("JudoDarkNiagaraBold", { fg = c["niagara-1"], bold = opts.bold })
 M.highlights.niagara = Highlight.new("JudoNiagara", { fg = c.niagara })
@@ -62,6 +61,7 @@ M.highlights.niagara_bold = Highlight.new("JudoNiagaraBold", { fg = c.niagara, b
 M.highlights.wisteria = Highlight.new("JudoWisteria", { fg = c.wisteria })
 M.highlights.wisteria_bold = Highlight.new("JudoWisteriaBold", { fg = c.wisteria, bold = opts.bold })
 
+M.highlights.gray = Highlight.new("JudoGray", { fg = c.gray })
 -- Signs
 
 M.highlights.red_sign = Highlight.new("JudoRedSign", { fg = c.red, reverse = opts.invert.signs })
