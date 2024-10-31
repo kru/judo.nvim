@@ -130,6 +130,7 @@ local function get_colors()
 			teal = p.teal,
 			white = p.white,
 			aqua = p.aqua,
+			quartz = p.quartz,
 		}
 	}
 
@@ -161,9 +162,11 @@ local function get_groups()
 			colors.niagara2,
 			colors.red,
 			colors.orange,
+			colors.qu,
 			colors.teal,
 			colors.wisteria,
 			colors.yellow,
+			colors.quartz,
 		}
 		for index, value in ipairs(term_colors) do
 			vim.g["terminal_color_" .. index - 1] = value
@@ -186,6 +189,7 @@ local function get_groups()
 		JudoOrange = { fg = colors.orange },
 		JudoPurple = { fg = colors.purple },
 		JudoRed = { fg = colors.red },
+		JudoQuartz = { fg = colors.quartz },
 		JudoTeal = { fg = colors.teal },
 		JudoYellow = { fg = colors.yellow },
 		JudoWhite = { fg = colors.white },
@@ -259,11 +263,11 @@ local function get_groups()
 		Identifier = { link = "JudoWhite" },
 		Function = { link = "JudoOrange" },
 		PreProc = { link = "JudoAqua" },
-		Include = { link = "JudoAqua" },
-		Define = { link = "JudoAqua" },
-		Macro = { link = "JudoAqua" },
+		Include = { link = "JudoQuartz" },
+		Define = { link = "JudoQuartz" },
+		Macro = { link = "JudoQuartz" },
 		PreCondit = { link = "JudoAqua" },
-		Constant = { link = "JudoPurple" },
+		Constant = { link = "JudoYellow" },
 		Character = { link = "JudoPurple" },
 		String = { fg = colors.green, italic = config.italic.strings },
 		Boolean = { link = "JudoOrange" },
@@ -364,7 +368,7 @@ local function get_groups()
 		NERDTreeDirSlash = { link = "JudoAqua" },
 		NERDTreeOpenable = { link = "JudoOrange" },
 		NERDTreeClosable = { link = "JudoOrange" },
-		NERDTreeFile = { link = "JudoFg1" },
+		NERDTreeFile = { link = "JudoFg" },
 		NERDTreeExecFile = { link = "JudoYellow" },
 		NERDTreeUp = { link = "JudoGray" },
 		NERDTreeCWD = { link = "JudoGreen" },
