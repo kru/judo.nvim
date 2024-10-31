@@ -195,6 +195,8 @@ local function get_groups()
 		JudoYellow = { fg = colors.yellow },
 		JudoWhite = { fg = colors.white },
 
+		JudoYellowSign = config.transparent_mode and { fg = colors.yellow, reverse = config.invert_signs }
+			or { fg = colors.yellow, bg = colors.bg1, reverse = config.invert_signs },
 		-- see current color scheme for Judo
 		JudoRedUnderline = { undercurl = config.undercurl, sp = colors.red },
 		JudoGreenUnderline = { undercurl = config.undercurl, sp = colors.green },
@@ -203,10 +205,11 @@ local function get_groups()
 		JudoPurpleUnderline = { undercurl = config.undercurl, sp = colors.purple },
 		JudoAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua },
 		JudoOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange },
+
 		Normal = config.transparent_mode and { fg = colors.fg, bg = nil } or
-		    { fg = colors.fg, bg = colors.bg },
+			{ fg = colors.fg, bg = colors.bg },
 		NormalFloat = config.transparent_mode and { fg = colors.fg, bg = nil } or
-		    { fg = colors.fg, bg = colors.bg1 },
+			{ fg = colors.fg, bg = colors.bg1 },
 		NormalNC = config.dim_inactive and { fg = colors.fg, bg = colors.bg1 } or { link = "Normal" },
 		CursorLine = { bg = colors.bg1 },
 		CursorColumn = { link = "CursorLine" },
@@ -231,7 +234,7 @@ local function get_groups()
 		WinBar = { fg = colors.fg, bg = colors.bg },
 		WinBarNC = { fg = colors.fg, bg = colors.bg1 },
 		WinSeparator = config.transparent_mode and { fg = colors.bg, bg = nil } or
-		    { fg = colors.bg1, bg = colors.bg },
+			{ fg = colors.bg1, bg = colors.bg },
 		WildMenu = { fg = colors.blue, bg = colors.bg, bold = config.bold },
 		Directory = { link = "JudoNiagara" },
 		Title = { link = "JudoNiagara1" },
@@ -240,16 +243,16 @@ local function get_groups()
 		ModeMsg = { link = "JudoYellow" },
 		Question = { link = "JudoOrange" },
 		WarningMsg = { link = "JudoRed" },
-		LineNr = { fg = colors.gray, bg = colors.bg2 },
+		LineNr = { fg = colors.gray, bg = colors.bg },
 		SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg1 },
 		Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds },
 		FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or
-		    { fg = colors.gray, bg = colors.bg1 },
+			{ fg = colors.gray, bg = colors.bg1 },
 		Cursor = { reverse = config.inverse, bg = colors.yellow },
 		vCursor = { link = "Cursor" },
 		iCursor = { link = "Cursor" },
 		lCursor = { link = "Cursor" },
-		Special = { link = "JudoLightBlue" },
+		Special = { link = "JudoYellow" },
 		Comment = { fg = colors.teal, italic = config.italic.comments },
 		Todo = { fg = colors.bg, bg = colors.yellow, bold = config.bold, italic = config.italic.comments },
 		Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments },
