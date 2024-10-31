@@ -132,6 +132,7 @@ local function get_colors()
 			white = p.white,
 			aqua = p.aqua,
 			quartz = p.quartz,
+			purple = p.purple,
 		}
 	}
 
@@ -153,6 +154,7 @@ local function get_groups()
 		local term_colors = {
 			colors.fg,
 			colors.bg,
+			colors.brown,
 			colors.blue,
 			colors.gold,
 			colors.gray,
@@ -163,7 +165,7 @@ local function get_groups()
 			colors.niagara2,
 			colors.red,
 			colors.orange,
-			colors.qu,
+			colors.purple,
 			colors.teal,
 			colors.wisteria,
 			colors.yellow,
@@ -211,7 +213,7 @@ local function get_groups()
 		NormalFloat = config.transparent_mode and { fg = colors.fg, bg = nil } or
 			{ fg = colors.fg, bg = colors.bg1 },
 		NormalNC = config.dim_inactive and { fg = colors.fg, bg = colors.bg1 } or { link = "Normal" },
-		CursorLine = { bg = colors.bg1 },
+		CursorLine = { bg = colors.white },
 		CursorColumn = { link = "CursorLine" },
 		TabLineFill = { fg = colors.bg, bg = colors.bg1, reverse = config.invert_tabline },
 		TabLineSel = { fg = colors.green, bg = colors.bg, reverse = config.invert_tabline },
