@@ -171,10 +171,10 @@ local function get_colors()
 	}
 
 	if contrast ~= nil and contrast ~= "" then
-		color_groups[bg].bg = p[bg .. "0_" .. contrast]
-		color_groups[bg].red = p[bg .. "_red_" .. contrast]
-		color_groups[bg].green = p[bg .. "_green_" .. contrast]
-		color_groups[bg].aqua = p[bg .. "_aqua_" .. contrast]
+		color_groups[bg].bg0 = p[bg .. "0_" .. contrast]
+		color_groups[bg].dark_red = p[bg .. "_red_" .. contrast]
+		color_groups[bg].dark_green = p[bg .. "_green_" .. contrast]
+		color_groups[bg].dark_aqua = p[bg .. "_aqua_" .. contrast]
 	end
 
 	return color_groups[bg]
