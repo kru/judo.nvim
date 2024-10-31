@@ -1,12 +1,10 @@
 local Highlight = require("judo.highlight")
 local c = require("judo.palette")
 local opts = require("judo.config").get_opts()
-local gruber_hl = require("judo.highlights.colorscheme").highlights
+local judo_hl = require("judo.highlights.colorscheme").highlights
 
 ---@type HighlightsProvider
 local M = {
-	setup = function()
-	end,
 	highlights = {},
 }
 
@@ -34,7 +32,7 @@ M.highlights.cursor_column = Highlight.new("CursorColumn", { bg = c["bg+2"] })
 ---Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 M.highlights.cursor_line = Highlight.new("CursorLine", { bg = c["bg+1"] })
 ---Directory names (and other special names in listings)
-M.highlights.directory = Highlight.new("Directory", { link = gruber_hl.niagara_bold })
+M.highlights.directory = Highlight.new("Directory", { link = judo_hl.niagara_bold })
 
 ---Diff mode: Added line |diff.txt|
 M.highlights.diff_add = Highlight.new("DiffAdd", { fg = c.green, bg = c.none })
@@ -77,7 +75,7 @@ M.highlights.cursor_line_number = Highlight.new("CursorLineNr", { fg = c.yellow 
 ---The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 M.highlights.match_paren = Highlight.new("MatchParen", { fg = c.fg, bg = c.wisteria })
 ---'showmode' message (e.g., "---INSERT ---")
-M.highlights.mode_msg = Highlight.new("ModeMsg", { link = gruber_hl.fg2 })
+M.highlights.mode_msg = Highlight.new("ModeMsg", { link = judo_hl.fg2 })
 ---Area for messages and cmdline
 -- M.highlights.msg_area = Highlight.new("MsgArea", { fg = c.fg_dark })
 ---Separator for scrolled messages, `msgsep` flag of 'display'
@@ -126,7 +124,7 @@ M.highlights.special_key = Highlight.new("SpecialKey", { fg = c["fg+2"] })
 -- Spell
 
 ---Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-M.highlights.spell_bad = Highlight.new("SpellBad", { link = gruber_hl.red_underline })
+M.highlights.spell_bad = Highlight.new("SpellBad", { link = judo_hl.red_underline })
 ---Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 M.highlights.spell_cap = Highlight.new("SpellCap", { undercurl = opts.undercurl })
 ---Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -151,13 +149,13 @@ M.highlights.tab_line_fill = Highlight.new("TabLineFill", { fg = c["bg+4"], bg =
 M.highlights.tab_line_sel = Highlight.new("TabLineSel", { fg = c.yellow, bg = c.none, bold = opts.bold })
 
 ---Titles for output from ":set all", ":autocmd" etc.
-M.highlights.title = Highlight.new("Title", { link = gruber_hl.quartz })
+M.highlights.title = Highlight.new("Title", { link = judo_hl.quartz })
 ---Visual mode selection
 M.highlights.visual = Highlight.new("Visual", { bg = c["bg+2"], reverse = opts.invert.visual })
 ---Visual mode selection when vim is "Not Owning the Selection".
-M.highlights.visual_nos = Highlight.new("VisualNOS", { link = gruber_hl.red })
+M.highlights.visual_nos = Highlight.new("VisualNOS", { link = judo_hl.red })
 ---Warning messages
-M.highlights.warning_msg = Highlight.new("WarningMsg", { link = gruber_hl.yellow })
+M.highlights.warning_msg = Highlight.new("WarningMsg", { link = judo_hl.yellow })
 ---"nbsp", "space", "tab" and "trail" in 'listchars'
 M.highlights.whitespace = Highlight.new("Whitespace", { fg = c["bg+4"], bg = c.none })
 ---Current match in 'wildmenu' completion
@@ -169,65 +167,65 @@ M.highlights.wild_menu = Highlight.new("WildMenu", { fg = c.black, bg = c.yellow
 ---Uncomment and edit if you want more specific syntax highlighting.
 
 ---(preferred) any constant
-M.highlights.constant = Highlight.new("Constant", { link = gruber_hl.yellow })
+M.highlights.constant = Highlight.new("Constant", { link = judo_hl.yellow })
 ---A string constant: "this is a string"
 M.highlights.string = Highlight.new("String", { fg = c.green, italic = opts.italic.strings })
 ---A character constant: 'c', '\n'
 M.highlights.character = Highlight.new("Character", { fg = c.green, italic = opts.italic.strings })
 ---A number constant: 234, 0xff
-M.highlights.number = Highlight.new("Number", { link = gruber_hl.yellow })
+M.highlights.number = Highlight.new("Number", { link = judo_hl.yellow })
 ---A boolean constant: TRUE, false
-M.highlights.boolean = Highlight.new("Boolean", { link = gruber_hl.yellow_bold })
+M.highlights.boolean = Highlight.new("Boolean", { link = judo_hl.yellow_bold })
 ---A floating point constant: 2.3e10
-M.highlights.float = Highlight.new("Float", { link = gruber_hl.yellow })
+M.highlights.float = Highlight.new("Float", { link = judo_hl.yellow })
 ---(preferred) any variable name
-M.highlights.identifier = Highlight.new("Identifier", { link = gruber_hl.fg1 })
+M.highlights.identifier = Highlight.new("Identifier", { link = judo_hl.fg0 })
 ---Function name (also: methods for classes)
-M.highlights.func = Highlight.new("Function", { link = gruber_hl.orange })
+M.highlights.func = Highlight.new("Function", { link = judo_hl.orange })
 ---(preferred) any statement
 M.highlights.statement = Highlight.new("Statement", { fg = c.orange })
 ---If, then, else, endif, switch, etc.
-M.highlights.conditional = Highlight.new("Conditional", { link = gruber_hl.orange })
+M.highlights.conditional = Highlight.new("Conditional", { link = judo_hl.orange })
 ---For, do, while, etc.
-M.highlights.repeats = Highlight.new("Repeat", { link = gruber_hl.ornage })
+M.highlights.repeats = Highlight.new("Repeat", { link = judo_hl.ornage })
 ---Case,, etc.
-M.highlights.label = Highlight.new("Label", { link = gruber_hl.orange })
+M.highlights.label = Highlight.new("Label", { link = judo_hl.orange })
 ---"sizeof", "+", "*", etc.
 M.highlights.operator = Highlight.new("Operator", { fg = c.fg, italic = opts.italic.operators })
 ---Any other keyword
 M.highlights.keyword = Highlight.new("Keyword", { link = c.blue })
 ---Try, catch, throw
-M.highlights.exception = Highlight.new("Exception", { link = gruber_hl.yellow_bold })
+M.highlights.exception = Highlight.new("Exception", { link = judo_hl.yellow_bold })
 ---(preferred) generic Preprocessor
-M.highlights.pre_proc = Highlight.new("PreProc", { link = gruber_hl.quartz })
+M.highlights.pre_proc = Highlight.new("PreProc", { link = judo_hl.quartz })
 ---Preprocessor #include
-M.highlights.include = Highlight.new("Include", { link = gruber_hl.quartz })
+M.highlights.include = Highlight.new("Include", { link = judo_hl.quartz })
 ---Preprocessor #define
-M.highlights.define = Highlight.new("Define", { link = gruber_hl.quartz })
+M.highlights.define = Highlight.new("Define", { link = judo_hl.quartz })
 ---Same as Define
-M.highlights.macro = Highlight.new("Macro", { link = gruber_hl.quartz })
+M.highlights.macro = Highlight.new("Macro", { link = judo_hl.quartz })
 ---Preprocessor #if, #else, #endif, etc.
-M.highlights.pre_condit = Highlight.new("PreCondit", { link = gruber_hl.quartz })
+M.highlights.pre_condit = Highlight.new("PreCondit", { link = judo_hl.quartz })
 ---(preferred) int, long, char, etc.
 M.highlights.type = Highlight.new("Type", { link = c.light_blue })
 ---Static, register, volatile, etc.
-M.highlights.storage_class = Highlight.new("StorageClass", { link = gruber_hl.light_blue })
+M.highlights.storage_class = Highlight.new("StorageClass", { link = judo_hl.light_blue })
 ---Struct, union, enum, etc.
-M.highlights.structure = Highlight.new("Structure", { link = gruber_hl.light_blue })
+M.highlights.structure = Highlight.new("Structure", { link = judo_hl.light_blue })
 ---A typedef
-M.highlights.typedef = Highlight.new("Typedef", { link = gruber_hl.light_blue })
+M.highlights.typedef = Highlight.new("Typedef", { link = judo_hl.light_blue })
 ---(preferred) any special symbol
-M.highlights.special = Highlight.new("Special", { link = gruber_hl.light_blue })
+M.highlights.special = Highlight.new("Special", { link = judo_hl.light_blue })
 --- special character in a constant
-M.highlights.special_char = Highlight.new("SpecialChar", { link = gruber_hl.light_blue })
+M.highlights.special_char = Highlight.new("SpecialChar", { link = judo_hl.light_blue })
 ---You can use CTRL-] on this
-M.highlights.tag = Highlight.new("Tag", { link = gruber_hl.wisteria })
+M.highlights.tag = Highlight.new("Tag", { link = judo_hl.wisteria })
 ---Character that needs attention
-M.highlights.delimiter = Highlight.new("Delimiter", { link = gruber_hl.fg0 })
+M.highlights.delimiter = Highlight.new("Delimiter", { link = judo_hl.fg0 })
 ---Special things inside a comment
-M.highlights.special_comment = Highlight.new("SpecialComment", { link = gruber_hl.teal })
+M.highlights.special_comment = Highlight.new("SpecialComment", { link = judo_hl.teal })
 ---Debugging statements
-M.highlights.debug = Highlight.new("Debug", { link = gruber_hl.fg2 })
+M.highlights.debug = Highlight.new("Debug", { link = judo_hl.fg2 })
 
 ---(preferred) text that stands out, HTML links
 M.highlights.underlined = Highlight.new("Underlined", { fg = c.wisteria, underline = opts.underline })
@@ -250,7 +248,7 @@ M.highlights.md_code_block = Highlight.new("markdownCodeBlock", { fg = c.green }
 ---markdownH2 = Highlight.new("markdownH2", { fg = c.blue, bold = true })
 ---markdownLinkText = Highlight.new("markdownLinkText", { fg = c.blue, underline = true })
 M.highlights.md_italic = Highlight.new("markdownItalic", { fg = c.wisteria, italic = true })
-M.highlights.md_bold = Highlight.new("markdownBold", { link = gruber_hl.yellow_bold })
+M.highlights.md_bold = Highlight.new("markdownBold", { link = judo_hl.yellow_bold })
 M.highlights.md_code_delim = Highlight.new("markdownCodeDelimiter", { fg = c.brown, italic = true })
 M.highlights.md_error = Highlight.new("markdownError", { fg = c.fg, bg = c["bg+1"] })
 

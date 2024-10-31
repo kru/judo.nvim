@@ -1,7 +1,6 @@
 # judo.nvim
 
-_A modern Neovim port of a deftheme [adaptation][gruber-darker-theme] of an Emacs
-[port][gruber-darker] of a BBEdit [colorscheme][gruber-dark]_
+Personal theme for Neovim
 
 ## Installation
 
@@ -58,7 +57,6 @@ Change configuration options by calling `setup()`
 prior to loading the colorscheme. Your preferences
 will be merged with the defaults.
 
-For example, with [Lazy](https://github.com/folke/lazy.nvim.git)...
 
 ```lua
 {
