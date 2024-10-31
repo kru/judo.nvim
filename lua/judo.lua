@@ -77,6 +77,7 @@ Judo.palette = {
 	black      = "#000000", -- Pure Black (not commonly used)
 	bg         = "#181818", -- Background
 	bg1        = "#282828", -- Background
+	bg2        = "#52494e", -- Background
 	gray       = "#95a99f", -- Gray for comments
 	blue       = "#96a6c8", -- Blue for keywords
 	light_blue = "#b0c9ff", -- Light blue for data types
@@ -112,6 +113,7 @@ local function get_colors()
 		dark = {
 			bg = p.bg,
 			bg1 = p.bg1,
+			bg2 = p.bg2,
 			fg = p.fg,
 			red = p.red_minus1,
 			green = p.green,
@@ -211,16 +213,16 @@ local function get_groups()
 		TabLineFill = { fg = colors.bg, bg = colors.bg1, reverse = config.invert_tabline },
 		TabLineSel = { fg = colors.green, bg = colors.bg, reverse = config.invert_tabline },
 		TabLine = { link = "TabLineFill" },
-		MatchParen = { bg = colors.wisteria, bold = config.bold },
+		MatchParen = { bg = colors.bg, fg = colors.fg, bold = config.bold },
 		ColorColumn = { bg = colors.bg1 },
 		Conceal = { bg = colors.bg, fg = colors.fg },
 		CursorLineNr = { fg = colors.yellow, bg = colors.bg1 },
 		NonText = { link = "JudoWhite" },
 		SpecialKey = { link = "JudoGray" },
-		Visual = { bg = colors.bg, reverse = config.invert_selection },
+		Visual = { bg = colors.gray, reverse = config.invert_selection },
 		VisualNOS = { link = "Visual" },
-		Search = { fg = colors.blue, bg = colors.bg, reverse = config.inverse },
-		IncSearch = { fg = colors.orange, bg = colors.bg, reverse = config.inverse },
+		Search = { fg = colors.fg, bg = colors.blue, reverse = config.inverse },
+		IncSearch = { fg = colors.bg, bg = colors.orange, reverse = config.inverse },
 		CurSearch = { link = "IncSearch" },
 		QuickFixLine = { link = "JudoPurple" },
 		Underlined = { fg = colors.blue, underline = config.underline },
@@ -238,7 +240,7 @@ local function get_groups()
 		ModeMsg = { link = "JudoYellow" },
 		Question = { link = "JudoOrange" },
 		WarningMsg = { link = "JudoRed" },
-		LineNr = { fg = colors.gray, bg = colors.bg },
+		LineNr = { fg = colors.gray, bg = colors.bg2 },
 		SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg1 },
 		Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds },
 		FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or
