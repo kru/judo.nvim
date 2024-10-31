@@ -27,7 +27,6 @@ local Judo = {}
 ---@field italic boolean?
 ---@field reverse boolean?
 ---@field nocombine boolean?
-
 ---@class JudoConfig
 ---@field terminal_colors boolean?
 ---@field undercurl boolean?
@@ -265,7 +264,7 @@ local function get_groups()
 		Label = { link = "JudoWhite" },
 		Exception = { link = "JudoYellow" },
 		Operator = { fg = colors.orange, italic = config.italic.operators },
-		Keyword = { link = "JudoLightBlue" },
+		Keyword = { link = "JudoBlue" },
 		Identifier = { link = "JudoWhite" },
 		Function = { link = "JudoOrange" },
 		PreProc = { link = "JudoAqua" },
@@ -279,9 +278,9 @@ local function get_groups()
 		Boolean = { link = "JudoYellow" },
 		Number = { link = "JudoYellow" },
 		Float = { link = "JudoYellow" },
-		Type = { link = "JudoLightBlue" },
+		Type = { link = "JudoGold" },
 		StorageClass = { link = "JudoYellow" },
-		Structure = { link = "JudoLightBlue" },
+		Structure = { link = "JudoOrange" },
 		Typedef = { link = "JudoWisteria" },
 		Pmenu = { fg = colors.fg, bg = colors.bg1 },
 		PmenuSel = { fg = colors.bg, bg = colors.blue, bold = config.bold },
