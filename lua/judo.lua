@@ -71,29 +71,50 @@ Judo.config = {
 -- main gruvbox color palette
 ---@class JudoPalette
 Judo.palette = {
-	fg         = "#e4e4e4", -- Soft Foreground for main text
-	white      = "#ffffff", -- Pure White for variables
-	black      = "#000000", -- Pure Black (not commonly used)
-	bg         = "#181818", -- Background
-	bg1        = "#282828", -- Background
-	bg2        = "#52494e", -- Background
-	gray       = "#95a99f", -- Gray for comments
-	blue       = "#96a6c8", -- Blue for keywords
-	light_blue = "#b0c9ff", -- Light blue for data types
-	orange     = "#cc8c3c", -- Orange for function names
-	green      = "#73d936", -- Green for strings
-	yellow     = "#ffdd33", -- Yellow for specific text in strings if needed
-	red_minus1 = "#c73c3f", -- Muted Red
-	brown      = "#cc8c3c", -- Muted Brown
-	quartz     = "#95a99f", -- Soft Neutral Grey
-	niagara2   = "#303540", -- Dark Blue-Grey
-	niagara1   = "#565f73", -- Muted Blue-Grey
-	niagara    = "#96a6c8", -- Soft Blue
-	wisteria   = "#9e95c7", -- Muted Purple
-	gold       = "#d4af37", -- Muted Gold for Data Types
-	teal       = "#5e9a8b", -- Muted Teal for Keywords
-	purple     = "#d3869b",
-	aqua       = "#49503b",
+	fg             = "#e4e4e4", -- Soft Foreground for main text
+	white          = "#ffffff", -- Pure White for variables
+	black          = "#000000", -- Pure Black (not commonly used)
+	bg             = "#181818", -- Background
+	bg1            = "#282828", -- Background
+	bg2            = "#52494e", -- Background
+	gray           = "#95a99f", -- Gray for comments
+	blue           = "#96a6c8", -- Blue for keywords
+	light_blue     = "#b0c9ff", -- Light blue for data types
+	orange         = "#cc8c3c", -- Orange for function names
+	green          = "#73d936", -- Green for strings
+	yellow         = "#ffdd33", -- Yellow for specific text in strings if needed
+	red_minus1     = "#c73c3f", -- Muted Red
+	brown          = "#cc8c3c", -- Muted Brown
+	quartz         = "#95a99f", -- Soft Neutral Grey
+	niagara2       = "#303540", -- Dark Blue-Grey
+	niagara1       = "#565f73", -- Muted Blue-Grey
+	niagara        = "#96a6c8", -- Soft Blue
+	wisteria       = "#9e95c7", -- Muted Purple
+	gold           = "#d4af37", -- Muted Gold for Data Types
+	teal           = "#5e9a8b", -- Muted Teal for Keywords
+	purple         = "#d3869b",
+	aqua           = "#49503b",
+	-- from gruvbox
+	dark0_hard     = "#1d2021",
+	dark0          = "#282828",
+	dark0_soft     = "#32302f",
+	dark1          = "#3c3836",
+	dark2          = "#504945",
+	dark3          = "#665c54",
+	dark4          = "#7c6f64",
+	light0_hard    = "#f9f5d7",
+	light0         = "#fbf1c7",
+	light0_soft    = "#f2e5bc",
+	light1         = "#ebdbb2",
+	light2         = "#d5c4a1",
+	light3         = "#bdae93",
+	light4         = "#a89984",
+	neutral_red    = "#cc241d",
+	neutral_green  = "#98971a",
+	neutral_yellow = "#d79921",
+	neutral_blue   = "#458588",
+	neutral_purple = "#b16286",
+	neutral_aqua   = "#689d6a",
 }
 
 -- get a hex list of gruvbox colors based on current bg and contrast config
@@ -111,9 +132,17 @@ local function get_colors()
 	local color_groups = {
 		dark = {
 			bg = p.bg,
-			bg1 = p.bg1,
-			bg2 = p.bg2,
+			bg0 = p.dark0,
+			bg1 = p.dark1,
+			bg2 = p.dark2,
+			bg3 = p.dark3,
+			bg4 = p.dark4,
 			fg = p.fg,
+			fg0 = p.light0,
+			fg1 = p.light1,
+			fg2 = p.light2,
+			fg3 = p.light3,
+			fg4 = p.light4,
 			red = p.red_minus1,
 			green = p.green,
 			yellow = p.yellow,
@@ -132,6 +161,12 @@ local function get_colors()
 			aqua = p.aqua,
 			quartz = p.quartz,
 			purple = p.purple,
+			neutral_red = p.neutral_red,
+			neutral_green = p.neutral_green,
+			neutral_yellow = p.neutral_yellow,
+			neutral_blue = p.neutral_blue,
+			neutral_purple = p.neutral_purple,
+			neutral_aqua = p.neutral_aqua,
 		}
 	}
 
@@ -151,13 +186,22 @@ local function get_groups()
 
 	if config.terminal_colors then
 		local term_colors = {
-			colors.fg,
-			colors.bg,
-			colors.brown,
-			colors.blue,
-			colors.gold,
+			colors.bg0,
+			colors.neutral_red,
+			colors.neutral_green,
+			colors.neutral_yellow,
+			colors.neutral_blue,
+			colors.neutral_purple,
+			colors.neutral_aqua,
+			colors.fg4,
 			colors.gray,
+			colors.red,
 			colors.green,
+			colors.yellow,
+			colors.blue,
+			colors.purple,
+			colors.aqua,
+			colors.fg1,
 			colors.light_blue,
 			colors.niagara,
 			colors.niagara1,
@@ -282,10 +326,10 @@ local function get_groups()
 		StorageClass = { link = "JudoNiagara" },
 		Structure = { link = "JudoAqua" },
 		Typedef = { link = "JudoLightBlue" },
-		Pmenu = { fg = colors.fg1, bg = colors.bg },
-		PmenuSel = { fg = colors.bg, bg = colors.bg1, bold = config.bold },
-		PmenuSbar = { bg = colors.bg },
-		PmenuThumb = { bg = colors.bg },
+		Pmenu = { fg = colors.fg1, bg = colors.bg2 },
+		PmenuSel = { fg = colors.bg2, bg = colors.blue, bold = config.bold },
+		PmenuSbar = { bg = colors.bg2 },
+		PmenuThumb = { bg = colors.bg4 },
 		DiffDelete = { bg = colors.red },
 		DiffAdd = { bg = colors.green },
 		DiffChange = { bg = colors.aqua },
