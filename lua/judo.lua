@@ -46,14 +46,14 @@ end
 
 ---Clear current highlights and set Neovim global `colors_name`
 function M.load()
-	local highlights = require("judo-darker.highlights")
+	local highlights = require("judo.highlights")
 
 	if vim.g.colors_name then
 		vim.cmd.hi("clear")
 	end
 
 	vim.opt.termguicolors = true
-	vim.g.colors_name = "judo-darker"
+	vim.g.colors_name = "judo"
 
 	highlights.setup()
 
