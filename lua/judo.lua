@@ -303,7 +303,7 @@ local function get_groups()
 		Conceal = { bg = colors.bg, fg = colors.fg },
 		CursorLineNr = { fg = colors.yellow, bg = colors.bg },
 		NonText = { link = "JudoBg2" },
-		SpecialKey = { link = "JudoGray" },
+		SpecialKey = { link = "JudoYellow" },
 		Visual = { bg = colors.bg3, reverse = config.invert_selection },
 		VisualNOS = { link = "Visual" },
 		Search = { fg = colors.fg, bg = colors.blue, reverse = config.inverse },
