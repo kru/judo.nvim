@@ -358,7 +358,7 @@ local function get_groups()
 		PreProc = { link = "JudoPurple" },
 		Include = { link = "JudoQuartz" },
 		Define = { link = "JudoQuartz" },
-		Macro = { link = "JudoWisteria" },
+		Macro = { link = "JudoYellow" },
 		PreCondit = { link = "JudoAqua" },
 		Constant = { link = "JudoYellow" },
 		Character = { link = "JudoYellow" },
