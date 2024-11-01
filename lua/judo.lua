@@ -71,27 +71,28 @@ Judo.config = {
 -- main gruvbox color palette
 ---@class JudoPalette
 Judo.palette = {
-	fg              = "#e4e4e4", -- Soft Foreground for main text
-	white           = "#ffffff", -- Pure White for variables
-	black           = "#000000", -- Pure Black (not commonly used)
-	bg              = "#181818", -- Background
-	bg1             = "#282828", -- Background
-	bg2             = "#52494e", -- Background
-	gray            = "#95a99f", -- Gray for comments
-	blue            = "#96a6c8", -- Blue for keywords
-	light_blue      = "#b0c9ff", -- Light blue for data types
-	orange          = "#cc8c3c", -- Orange for function names
-	green           = "#73d936", -- Green for strings
-	yellow          = "#ffdd33", -- Yellow for specific text in strings if needed
-	red_minus1      = "#c73c3f", -- Muted Red
-	brown           = "#cc8c3c", -- Muted Brown
-	quartz          = "#95a99f", -- Soft Neutral Grey
-	niagara2        = "#303540", -- Dark Blue-Grey
-	niagara1        = "#565f73", -- Muted Blue-Grey
-	niagara         = "#96a6c8", -- Soft Blue
-	wisteria        = "#9e95c7", -- Muted Purple
-	gold            = "#d4af37", -- Muted Gold for Data Types
-	teal            = "#5e9a8b", -- Muted Teal for Keywords
+	fg              = "#e4e4e4",   -- Soft Foreground for main text
+	white           = "#ffffff",   -- Pure White for variables
+	black           = "#000000",   -- Pure Black (not commonly used)
+	bg              = "#181818",   -- Background
+	bg1             = "#282828",   -- Background
+	bg2             = "#52494e",   -- Background
+	gray            = "#95a99f",   -- Gray for comments
+	blue            = "#96a6c8",   -- Blue for keywords
+	light_blue      = "#b0c9ff",   -- Light blue for data types
+	orange          = "#cc8c3c",   -- Orange for function names
+	dark_orange     = "#cc7733",   -- More dark
+	green           = "#73d936",   -- Green for strings
+	yellow          = "#ffdd33",   -- Yellow for specific text in strings if needed
+	red_minus1      = "#c73c3f",   -- Muted Red
+	brown           = "#cc8c3c",   -- Muted Brown
+	quartz          = "#95a99f",   -- Soft Neutral Grey
+	niagara2        = "#303540",   -- Dark Blue-Grey
+	niagara1        = "#565f73",   -- Muted Blue-Grey
+	niagara         = "#96a6c8",   -- Soft Blue
+	wisteria        = "#9e95c7",   -- Muted Purple
+	gold            = "#d4af37",   -- Muted Gold for Data Types
+	teal            = "#5e9a8b",   -- Muted Teal for Keywords
 	purple          = "#d3869b",
 	aqua            = "#49503b",
 	-- from gruvbox
@@ -158,6 +159,7 @@ local function get_colors()
 			blue = p.blue,
 			light_blue = p.light_blue,
 			orange = p.orange,
+			dark_orange = p.dark_orange,
 			brown = p.brown,
 			niagara = p.niagara,
 			niagara1 = p.niagara1,
@@ -255,8 +257,10 @@ local function get_groups()
 		JudoNiagara1 = { fg = colors.niagara1 },
 		JudoNiagara2 = { fg = colors.niagara2 },
 		JudoOrange = { fg = colors.orange },
+		JudoDarkOrange = { fg = colors.dark_orange },
 		JudoOrangeBold = { fg = colors.orange, bold = config.bold },
 		JudoPurple = { fg = colors.purple },
+		JudoNeutralPurple = { fg = colors.neutral_purple },
 		JudoRed = { fg = colors.red },
 		JudoRedBold = { fg = colors.red, bold = config.bold },
 		JudoQuartz = { fg = colors.quartz },
@@ -348,9 +352,9 @@ local function get_groups()
 		Keyword = { link = "JudoBlue" },
 		Identifier = { link = "JudoWhite" },
 		Function = { link = "JudoOrange" },
-		PreProc = { link = "JudoPurple" },
+		PreProc = { link = "JudoNeutralPurple" },
 		Include = { link = "JudoQuartz" },
-		Define = { link = "JudoPurple" },
+		Define = { link = "JudoNeutralPurple" },
 		Macro = { link = "JudoGold" },
 		PreCondit = { link = "JudoAqua" },
 		Constant = { link = "JudoYellow" },
