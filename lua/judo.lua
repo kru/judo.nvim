@@ -96,7 +96,7 @@ Judo.palette = {
 	aqua            = "#49503b",
 	-- from gruvbox
 	dark0_hard      = "#1d2021",
-	dark0           = "#282828",
+	dark0           = "#181818",
 	dark0_soft      = "#32302f",
 	dark1           = "#3c3836",
 	dark2           = "#504945",
@@ -344,7 +344,7 @@ local function get_groups()
 		Repeat = { link = "JudoWisteria" },
 		Label = { link = "JudoWhite" },
 		Exception = { link = "JudoYellow" },
-		Operator = { fg = colors.orange, italic = config.italic.operators },
+		Operator = { fg = colors.white, italic = config.italic.operators },
 		Keyword = { link = "JudoBlue" },
 		Identifier = { link = "JudoWhite" },
 		Function = { link = "JudoOrange" },
