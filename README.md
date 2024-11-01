@@ -1,6 +1,8 @@
 # judo.nvim
 
-Personal theme for Neovim
+Personalized theme for Neovim
+
+![image](https://raw.githubusercontent.com/kru/judo.nvim/29970a8104d62fb92500422dc34c4385ddd95010/judo.nvim.jpg)
 
 ## Installation
 
@@ -10,22 +12,17 @@ Personal theme for Neovim
 { "kru/judo.nvim" }
 ```
 
-### Packer
+In your `init.lua` file, add the following
 
 ```lua
-use "kru/judo.nvim"
-```
-
-### Plug
-
-```vim
-Plug 'kru/judo.nvim'
-```
-
-Then, somewhere in your `init.lua`, set the colorscheme
-
-```lua
-vim.cmd.colorscheme("judo")
+return {
+    "kru/judo.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        vim.cmd('colorscheme judo')
+    end
+}
 ```
 
 ## Configuration
@@ -36,14 +33,14 @@ vim.cmd.colorscheme("judo")
 {
   bold = true,
   invert = {
-    signs = false,
-    tabline = false,
-    visual = false,
+    signs = true,
+    tabline = true,
+    visual = true,
   },
   italic = {
     strings = true,
     comments = true,
-    operators = false,
+    operators = true,
     folds = true,
   },
   undercurl = true,
@@ -51,31 +48,8 @@ vim.cmd.colorscheme("judo")
 }
 ```
 
-### With updated preferences
-
-Change configuration options by calling `setup()`
-prior to loading the colorscheme. Your preferences
-will be merged with the defaults.
-
-
-```lua
-{
-  "kru/judo.nvim",
-  opts = {
-    bold = false,
-    italic = {
-      strings = false,
-    },
-  },
-}
-```
-
 ## Credits
 
-These repositories were great knowledge sources and their
-inspiration helped immensely with the development of this plugin.
-
 - [blazkowolf/gruber-darker-theme][gruber-darker-theme]
-- [rexim/gruber-darker-theme][gruber-darker-theme]
-- [folke/tokyonight.nvim][tokyonight]
+- [ellisonleao/gruvbox.nvim][gruvbox]
 
