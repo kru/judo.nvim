@@ -268,6 +268,8 @@ local function get_groups()
 		JudoYellow = { fg = colors.yellow },
 		JudoYellowBold = { fg = colors.yellow, bold = config.bold },
 		JudoWhite = { fg = colors.white },
+		JudoWisteria = { fg = colors.wisteria },
+		JudoNeutralBlue = { fg = colors.neutral_blue },
 
 		JudoYellowSign = config.transparent_mode and { fg = colors.yellow, reverse = config.invert_signs }
 			or { fg = colors.yellow, bg = colors.bg1, reverse = config.invert_signs },
@@ -346,7 +348,7 @@ local function get_groups()
 		Error = { fg = colors.red, bold = config.bold, reverse = config.inverse },
 		Statement = { link = "JudoLightBlue" },
 		Conditional = { link = "JudoWisteria" },
-		Repeat = { link = "JudoWisteria" },
+		Repeat = { link = "JudoNeutralBlue" },
 		Label = { link = "JudoWhite" },
 		Exception = { link = "JudoYellow" },
 		Operator = { fg = colors.teal, italic = config.italic.operators },
