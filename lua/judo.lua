@@ -71,30 +71,33 @@ Judo.config = {
 -- main gruvbox color palette
 ---@class JudoPalette
 Judo.palette = {
-	fg              = "#e4e4e4",   -- Soft Foreground for main text
-	white           = "#ffffff",   -- Pure White for variables
-	black           = "#000000",   -- Pure Black (not commonly used)
-	bg              = "#181818",   -- Background
-	bg1             = "#282828",   -- Background
-	bg2             = "#52494e",   -- Background
-	gray            = "#95a99f",   -- Gray for comments
-	blue            = "#96a6c8",   -- Blue for keywords
-	light_blue      = "#b0c9ff",   -- Light blue for data types
-	steel_blue		= "#7a9fbf",
-	orange          = "#cc8c3c",   -- Orange for function names
-	light_orange	= "#ff7b72",
-	dark_orange     = "#cc7733",   -- More dark
-	green           = "#a3d17d",   -- Green for strings
-	yellow          = "#f0d67c",   -- Yellow for specific text in strings if needed
-	red_minus1      = "#c73c3f",   -- Muted Red
-	brown           = "#cc8c3c",   -- Muted Brown
-	quartz          = "#95a99f",   -- Soft Neutral Grey
-	niagara2        = "#303540",   -- Dark Blue-Grey
-	niagara1        = "#565f73",   -- Muted Blue-Grey
-	niagara         = "#96a6c8",   -- Soft Blue
-	wisteria        = "#9e95c7",   -- Muted Purple
-	gold            = "#d4af37",   -- Muted Gold for Data Types
-	teal            = "#5e9a8b",   -- Muted Teal for Keywords
+	fg              = "#e4e4e4", -- Soft Foreground for main text
+	white           = "#ffffff", -- Pure White for variables
+	black           = "#000000", -- Pure Black (not commonly used)
+	bg              = "#181818", -- Background
+	bg1             = "#282828", -- Background
+	bg2             = "#52494e", -- Background
+	gray            = "#95a99f", -- Gray for comments
+	light_gray		= "#b0b8b0",
+	blue            = "#96a6c8", -- Blue for keywords
+	light_blue      = "#b0c9ff", -- Light blue for data types
+	steel_blue      = "#7a9fbf",
+	orange          = "#cc8c3c", -- Orange for function names
+	light_orange    = "#ff7b72",
+	dark_orange     = "#cc7733", -- More dark
+	green           = "#a3d17d", -- Green for strings
+	yellow          = "#f0d67c", -- Yellow for specific text in strings if needed
+	red_minus1      = "#c73c3f", -- Muted Red
+	brown           = "#cc8c3c", -- Muted Brown
+	quartz          = "#95a99f", -- Soft Neutral Grey
+	niagara2        = "#303540", -- Dark Blue-Grey
+	niagara1        = "#565f73", -- Muted Blue-Grey
+	niagara         = "#96a6c8", -- Soft Blue
+	wisteria        = "#9e95c7", -- Muted Purple
+	gold            = "#d4af37", -- Muted Gold for Data Types
+	pale_sand		= "#e8d3b8",
+	ivory			= "#e4dbc3",
+	teal            = "#5e9a8b", -- Muted Teal for Keywords
 	purple          = "#d3869b",
 	aqua            = "#49503b",
 	-- from gruvbox
@@ -170,7 +173,10 @@ local function get_colors()
 			niagara2 = p.niagara2,
 			wisteria = p.wisteria,
 			gold = p.gold,
+			pale_sand = p.pale_sand,
 			gray = p.gray,
+			light_gray = p.light_gray,
+			ivory = p.ivory,
 			teal = p.teal,
 			white = p.white,
 			aqua = p.aqua,
@@ -252,9 +258,11 @@ local function get_groups()
 		JudoBlue = { fg = colors.blue },
 		JudoSteelBlue = { fg = colors.steel_blue },
 		JudoBlueBold = { fg = colors.blue, bold = config.bold },
-		JudoGold = { fg = colors.orange },
+		JudoGold = { fg = colors.gold },
+		JudoPaleSand = { fg = colors.pale_sand },
 		JudoGoldBold = { fg = colors.orange, bold = config.bold },
 		JudoGray = { fg = colors.gray },
+		JudoLigGray = { fg = colors.light_gray },
 		JudoGreen = { fg = colors.green },
 		JudoGreenBold = { fg = colors.green, bold = config.bold },
 
@@ -275,6 +283,7 @@ local function get_groups()
 		JudoYellow = { fg = colors.yellow },
 		JudoYellowBold = { fg = colors.yellow, bold = config.bold },
 		JudoWhite = { fg = colors.white },
+		JudoIvory = { fg = colors.ivory },
 		JudoWisteria = { fg = colors.wisteria },
 		JudoNeutralBlue = { fg = colors.neutral_blue },
 
@@ -326,8 +335,8 @@ local function get_groups()
 		Exception = { link = "JudoYellow" },
 		Operator = { fg = colors.teal, italic = config.italic.operators },
 		Keyword = { link = "JudoLightOrange" },
-		Identifier = { link = "JudoWhite" },
-		Function = { link = "JudoSteelBlue" },
+		Identifier = { link = "JudoIvory" },
+		Function = { link = "JudoPaleSand" },
 		PreProc = { link = "JudoGold" },
 		Include = { link = "JudoQuartz" },
 		Define = { link = "JudoLightOrange" },
@@ -339,7 +348,7 @@ local function get_groups()
 		Boolean = { link = "JudoYellow" },
 		Number = { link = "JudoYellow" },
 		Float = { link = "JudoYellow" },
-		Type = { link = "JudoWhite" },
+		Type = { link = "JudoSteelBlue" },
 		StorageClass = { link = "JudoNiagara" },
 		Structure = { link = "JudoAqua" },
 		Typedef = { link = "JudoLightOrange" },
@@ -374,7 +383,7 @@ local function get_groups()
 		vCursor = { link = "Cursor" },
 		iCursor = { link = "Cursor" },
 		lCursor = { link = "Cursor" },
-		Comment = { fg = colors.gray, italic = config.italic.comments },
+		Comment = { fg = colors.light_gray, italic = config.italic.comments },
 		Todo = { fg = colors.bg, bg = colors.yellow, bold = config.bold, italic = config.italic.comments },
 		Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments },
 		Error = { fg = colors.red, bold = config.bold, reverse = config.inverse },
@@ -575,6 +584,24 @@ local function get_groups()
 		goBuiltins = { link = "JudoOrange" },
 		luaIn = { link = "JudoRed" },
 		luaFunction = { link = "JudoAqua" },
+		typescriptReserved = { link = "JudoAqua" },
+		typescriptLabel = { link = "JudoAqua" },
+		typescriptFuncKeyword = { link = "JudoAqua" },
+		typescriptIdentifier = { link = "JudoOrange" },
+		typescriptBraces = { link = "JudoFg1" },
+		typescriptEndColons = { link = "JudoFg1" },
+		typescriptDOMObjects = { link = "JudoFg1" },
+		typescriptAjaxMethods = { link = "JudoFg1" },
+		typescriptLogicSymbols = { link = "JudoFg1" },
+		typescriptDocSeeTag = { link = "Comment" },
+		typescriptDocParam = { link = "Comment" },
+		typescriptDocTags = { link = "vimCommentTitle" },
+		typescriptGlobalObjects = { link = "JudoFg1" },
+		typescriptParens = { link = "JudoFg3" },
+		typescriptOpSymbols = { link = "JudoFg3" },
+		typescriptHtmlElemProperties = { link = "JudoFg1" },
+		typescriptNull = { link = "JudoPurple" },
+		typescriptInterpolationDelimiter = { link = "JudoAqua" },
 		markdownItalic = { fg = colors.fg1, italic = true },
 		markdownBold = { fg = colors.fg1, bold = config.bold },
 		markdownBoldItalic = { fg = colors.fg1, bold = config.bold, italic = true },
