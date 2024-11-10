@@ -68,7 +68,7 @@ Judo.config = {
 	transparent_mode = false,
 }
 
--- main gruvbox color palette
+-- main judo.nvim color palette
 ---@class JudoPalette
 Judo.palette = {
 	fg              = "#e4e4e4", -- Soft Foreground for main text
@@ -78,7 +78,7 @@ Judo.palette = {
 	bg1             = "#282828", -- Background
 	bg2             = "#52494e", -- Background
 	gray            = "#95a99f", -- Gray for comments
-	light_gray		= "#b0b8b0",
+	light_gray      = "#b0b8b0",
 	blue            = "#96a6c8", -- Blue for keywords
 	light_blue      = "#b0c9ff", -- Light blue for data types
 	steel_blue      = "#7a9fbf",
@@ -95,8 +95,8 @@ Judo.palette = {
 	niagara         = "#96a6c8", -- Soft Blue
 	wisteria        = "#9e95c7", -- Muted Purple
 	gold            = "#d4af37", -- Muted Gold for Data Types
-	pale_sand		= "#e8d3b8",
-	ivory			= "#e4dbc3",
+	pale_sand       = "#e8d3b8",
+	ivory           = "#e4dbc3",
 	teal            = "#5e9a8b", -- Muted Teal for Keywords
 	purple          = "#d3869b",
 	aqua            = "#49503b",
@@ -132,7 +132,7 @@ Judo.palette = {
 	dark_aqua_soft  = "#525742",
 }
 
--- get a hex list of gruvbox colors based on current bg and contrast config
+-- get a hex list of judo.nvim colors based on current bg and contrast config
 local function get_colors()
 	local p = Judo.palette
 	local config = Judo.config
@@ -484,16 +484,16 @@ local function get_groups()
 		NERDTreeHelp = { link = "JudoFg1" },
 		NERDTreeToggleOn = { link = "JudoGreen" },
 		NERDTreeToggleOff = { link = "JudoRed" },
-		TelescopeNormal = { link = "JudoFg1" },
-		TelescopeSelection = { link = "JudoOrangeBold" },
+		TelescopeNormal = { link = "JudoIvory" },
+		TelescopeSelection = { link = "JudoGoldBold" },
 		TelescopeSelectionCaret = { link = "JudoRed" },
 		TelescopeMultiSelection = { link = "JudoGray" },
 		TelescopeBorder = { link = "TelescopeNormal" },
 		TelescopePromptBorder = { link = "TelescopeNormal" },
 		TelescopeResultsBorder = { link = "TelescopeNormal" },
 		TelescopePreviewBorder = { link = "TelescopeNormal" },
-		TelescopeMatching = { link = "JudoBlue" },
-		TelescopePromptPrefix = { link = "JudoRed" },
+		TelescopeMatching = { link = "JudoYellow" },
+		TelescopePromptPrefix = { link = "JudoLightOrange" },
 		TelescopePrompt = { link = "TelescopeNormal" },
 		CmpItemAbbr = { link = "JudoFg" },
 		CmpItemAbbrDeprecated = { link = "JudoFg" },
@@ -605,15 +605,15 @@ local function get_groups()
 		markdownItalic = { fg = colors.fg1, italic = true },
 		markdownBold = { fg = colors.fg1, bold = config.bold },
 		markdownBoldItalic = { fg = colors.fg1, bold = config.bold, italic = true },
-		markdownH1 = { link = "JudoGreen" },
-		markdownH2 = { link = "JudoGreen" },
+		markdownH1 = { link = "JudoGold" },
+		markdownH2 = { link = "JudoGold" },
 		markdownH3 = { link = "JudoYellow" },
 		markdownH4 = { link = "JudoYellow" },
 		markdownH5 = { link = "JudoYellow" },
 		markdownH6 = { link = "JudoYellow" },
-		markdownCode = { link = "JudoAqua" },
-		markdownCodeBlock = { link = "JudoAqua" },
-		markdownCodeDelimiter = { link = "JudoAqua" },
+		markdownCode = { link = "JudoLightBlue" },
+		markdownCodeBlock = { link = "JudoLightBlue" },
+		markdownCodeDelimiter = { link = "JudoQuartz" },
 		markdownBlockquote = { link = "JudoGray" },
 		markdownListMarker = { link = "JudoGray" },
 		markdownOrderedListMarker = { link = "JudoGray" },
@@ -624,7 +624,7 @@ local function get_groups()
 		markdownLinkTextDelimiter = { link = "JudoFg3" },
 		markdownHeadingDelimiter = { link = "JudoOrange" },
 		markdownUrl = { link = "JudoPurple" },
-		markdownUrlTitleDelimiter = { link = "JudoGreen" },
+		markdownUrlTitleDelimiter = { link = "JudoYellow" },
 		markdownLinkText = { fg = colors.gray, underline = config.underline },
 		markdownIdDeclaration = { link = "markdownLinkText" },
 		luaTable = { link = "JudoOrange" },
@@ -732,7 +732,7 @@ local function get_groups()
 		["@keyword.exception"] = { link = "Exception" },
 		["@keyword.function"] = { link = "Keyword" },
 		["@keyword.import"] = { link = "Include" },
-		["@keyword.operator"] = { link = "GruvboxRed" },
+		["@keyword.operator"] = { link = "JudoRed" },
 		["@keyword.repeat"] = { link = "Repeat" },
 		["@keyword.return"] = { link = "Keyword" },
 		["@keyword.storage"] = { link = "StorageClass" },
@@ -750,14 +750,14 @@ local function get_groups()
 		["@attribute"] = { link = "PreProc" },
 		["@field"] = { link = "Identifier" },
 		["@property"] = { link = "Identifier" },
-		["@variable"] = { link = "GruvboxFg1" },
+		["@variable"] = { link = "JudoFg1" },
 		["@variable.builtin"] = { link = "Special" },
 		["@variable.member"] = { link = "Identifier" },
 		["@variable.parameter"] = { link = "Identifier" },
 		["@constant"] = { link = "Constant" },
 		["@constant.builtin"] = { link = "Special" },
 		["@constant.macro"] = { link = "Define" },
-		["@markup"] = { link = "GruvboxFg1" },
+		["@markup"] = { link = "JudoFg1" },
 		["@markup.strong"] = { bold = config.bold },
 		["@markup.italic"] = { link = "@text.emphasis" },
 		["@markup.underline"] = { underline = config.underline },
@@ -770,8 +770,8 @@ local function get_groups()
 		["@markup.link"] = { link = "Underlined" },
 		["@markup.link.label"] = { link = "SpecialChar" },
 		["@markup.list"] = { link = "Delimiter" },
-		["@markup.list.checked"] = { link = "GruvboxGreen" },
-		["@markup.list.unchecked"] = { link = "GruvboxGray" },
+		["@markup.list.checked"] = { link = "JudoGreen" },
+		["@markup.list.unchecked"] = { link = "JudoGray" },
 		["@comment.todo"] = { link = "Todo" },
 		["@comment.note"] = { link = "SpecialComment" },
 		["@comment.warning"] = { link = "WarningMsg" },
@@ -779,10 +779,10 @@ local function get_groups()
 		["@diff.plus"] = { link = "diffAdded" },
 		["@diff.minus"] = { link = "diffRemoved" },
 		["@diff.delta"] = { link = "diffChanged" },
-		["@module"] = { link = "GruvboxFg1" },
-		["@namespace"] = { link = "GruvboxFg1" },
+		["@module"] = { link = "JudoFg1" },
+		["@namespace"] = { link = "JudoFg1" },
 		["@symbol"] = { link = "Identifier" },
-		["@text"] = { link = "GruvboxFg1" },
+		["@text"] = { link = "JudoFg1" },
 		["@text.strong"] = { bold = config.bold },
 		["@text.emphasis"] = { italic = config.italic.emphasis },
 		["@text.underline"] = { underline = config.underline },
@@ -795,8 +795,8 @@ local function get_groups()
 		["@text.environment.name"] = { link = "Type" },
 		["@text.reference"] = { link = "Constant" },
 		["@text.todo"] = { link = "Todo" },
-		["@text.todo.checked"] = { link = "GruvboxGreen" },
-		["@text.todo.unchecked"] = { link = "GruvboxGray" },
+		["@text.todo.checked"] = { link = "JudoGreen" },
+		["@text.todo.unchecked"] = { link = "JudoGray" },
 		["@text.note"] = { link = "SpecialComment" },
 		["@text.note.comment"] = { fg = colors.purple, bold = config.bold },
 		["@text.warning"] = { link = "WarningMsg" },
