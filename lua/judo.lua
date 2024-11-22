@@ -42,6 +42,8 @@ local Judo = {}
 ---@field inverse boolean?
 ---@field overrides table<string, HighlightDefinition>?
 ---@field palette_overrides table<string, string>?
+---@field transparent_mode boolean?
+---@field dim_inactive boolean?
 
 Judo.config = {
 	terminal_colors = true,
@@ -392,8 +394,8 @@ local function get_groups()
 		PmenuSbar = { bg = colors.bg2 },
 		PmenuThumb = { bg = colors.bg4 },
 		DiffDelete = { bg = colors.red },
-		DiffAdd = { bg = colors.green },
-		DiffChange = { bg = colors.aqua },
+		DiffAdd = { bg = colors.bg2 },
+		DiffChange = { bg = colors.bg0 },
 		DiffText = { bg = colors.yellow, fg = colors.bg },
 		SpellCap = { link = "JudoBlue" },
 		SpellBad = { link = "JudoRedUnderline" },
@@ -427,7 +429,7 @@ local function get_groups()
 		LspReferenceWrite = { link = "JudoOrange" },
 		LspCodeLens = { link = "JudoGray" },
 		LspSignatureActiveParameter = { link = "Search" },
-		gitcommitSelectedFile = { link = "JudoGreen" },
+		gitcommitSelectedFile = { link = "JudoGray" },
 		gitcommitDiscardedFile = { link = "JudoRed" },
 		GitSignsAdd = { link = "JudoGreen" },
 		GitSignsChange = { link = "JudoOrange" },
