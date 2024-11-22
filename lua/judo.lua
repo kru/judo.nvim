@@ -431,7 +431,7 @@ local function get_groups()
 		LspSignatureActiveParameter = { link = "Search" },
 		gitcommitSelectedFile = { link = "JudoGray" },
 		gitcommitDiscardedFile = { link = "JudoRed" },
-		GitSignsAdd = { link = "JudoGreen" },
+		GitSignsAdd = { link = "JudoBg2" },
 		GitSignsChange = { link = "JudoOrange" },
 		GitSignsDelete = { link = "JudoRed" },
 		NvimTreeSymlink = { fg = colors.quartz },
