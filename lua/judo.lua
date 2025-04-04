@@ -581,7 +581,7 @@ local function get_groups()
 		xmlEntityPunct = { link = "JudoRed" },
 		goDirective = { link = "JudoAqua" },
 		goConstants = { link = "JudoPurple" },
-		goDeclaration = { link = "JudoRed" },
+		goDeclaration = { link = "JudoPaleSand" },
 		goDeclType = { link = "JudoBlue" },
 		goBuiltins = { link = "JudoOrange" },
 		luaIn = { link = "JudoRed" },
