@@ -352,7 +352,7 @@ local function get_groups()
 		Float = { link = "JudoYellow" },
 		Type = { link = "JudoSteelBlue" },
 		StorageClass = { link = "JudoNiagara" },
-		Structure = { link = "JudoAqua" },
+		Structure = { link = "JudoLightOrange" },
 		Typedef = { link = "JudoLightOrange" },
 		Delimiter = { link = "JudoWhite" },
 		Visual = { bg = colors.bg3, reverse = config.invert_selection },
