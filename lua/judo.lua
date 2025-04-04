@@ -597,7 +597,7 @@ local function get_groups()
 		typescriptIdentifierName = { link = "JudoFg1" },
 		typescriptBraces = { link = "JudoFg1" },
 		typescriptLabel = { link = "JudoSteelBlue" },
-		typescriptBlock = { link = "JudoWhite" },
+		typescriptBlock = { link = "JudoPaleSand" },
 		typescriptClassBlock = { link = "JudoSteelBlue" },
 		typescriptConsoleMethod = { link = "JudoPaleSand" },
 		typescriptEndColons = { link = "JudoFg1" },
