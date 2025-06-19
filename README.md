@@ -2,7 +2,7 @@
 
 Personalized theme for Neovim
 
-![image](https://raw.githubusercontent.com/kru/judo.nvim/29970a8104d62fb92500422dc34c4385ddd95010/judo.nvim.jpg)
+![image](https://krisrp.dev/images/nvim_theme_judo.png)
 
 ## Installation
 
