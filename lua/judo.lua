@@ -953,7 +953,7 @@ local function get_groups()
 		["@lsp.typemod.function.defaultLibrary"] = { fg = colors.yellow, bold = config.bold },
 		["@lsp.typemod.method.defaultLibrary"] = { fg = colors.yellow, bold = config.bold },
 		["@lsp.typemod.variable.defaultLibrary"] = { fg = colors.orange, bold = config.bold },
-		["@lsp.typemod.variable.readonly"] = { fg = colors.purple, italic = config.italic.emphasis },
+		["@lsp.typemod.variable.readonly"] = { fg = colors.fg, italic = config.italic.emphasis },
 		["@lsp.typemod.variable.static"] = { bold = config.bold },
 		["@lsp.typemod.property.readonly"] = { fg = colors.fg, italic = config.italic.emphasis },
 		["@lsp.typemod.keyword.async"] = { fg = colors.purple, italic = config.italic.emphasis },
