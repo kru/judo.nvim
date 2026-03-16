@@ -1,6 +1,6 @@
 # judo.nvim
 
-A personalized, modernized dark theme for Neovim designed for elegance and long coding sessions. Built with a soothing warm palette that's easy on the eyes.
+A personalized, modernized dark theme for Neovim designed for elegance and long coding sessions. Built with an elegant warm palette inspired by the ayu theme, featuring modern blue-gray backgrounds with warm, vibrant syntax colors.
 
 ![image](https://krisrp.dev/images/nvim_theme_judo.png)
 
@@ -167,22 +167,26 @@ require("judo").setup({
 
 | Color | Hex | Usage |
 |-------|-----|-------|
-| Background | `#181818` | Main background |
-| Foreground | `#e4e4e4` | Main text |
-| Light Gray | `#b0b8b0` | Comments |
-| Green | `#a3d17d` | Strings, success |
-| Blue | `#96a6c8` | Keywords, info |
-| Steel Blue | `#7a9fbf` | Types |
-| Orange | `#cc8c3c` | Warnings, special |
-| Light Orange | `#ff7b72` | Control flow |
-| Yellow | `#f0d67c` | Constants, numbers |
-| Teal | `#5e9a8b` | Operators |
-| Purple | `#d3869b` | Special keywords |
-| Pale Sand | `#e8d3b8` | Functions |
-| Ivory | `#e4dbc3` | Variables |
+| Background | `#212733` | Main background (blue-gray) |
+| Background Panel | `#272D38` | Floating windows, panels |
+| Foreground | `#D9D7CE` | Main text (warm cream) |
+| Comment | `#5C6773` | Comments, subtle text |
+| Red | `#F07178` | Errors, deletes, important |
+| Orange | `#FFAE57` | Keywords, warnings |
+| Yellow | `#FFD57F` | Functions, method names |
+| Green | `#BBE67E` | Strings, success |
+| Cyan | `#5CCFE6` | Types, tags, info |
+| Blue | `#80D4FF` | Operators, links |
+| Purple | `#D4BFFF` | Numbers, constants |
+| Magenta | `#FFC44C` | Special, accents |
+| Teal | `#95E6CB` | Hints, regex, escape chars |
+| Border | `#3D4751` | Borders, separators |
+| Selection | `#343F4C` | Visual selection |
+| Highlight | `#242B38` | Cursor line, highlights |
 
 ## Credits
 
+- [ayu-theme/ayu-vim](https://github.com/ayu-theme/ayu-vim) - Color palette inspiration
 - [blazkowolf/gruber-darker-theme](https://github.com/blazkowolf/gruber-darker-theme.nvim)
 - [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim)
 
